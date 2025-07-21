@@ -1,0 +1,22 @@
+include "common/llm_info_defaults.hocon"
+include "common/toolbox_info_defaults.hocon"
+
+name: "legal_discovery_automation_system"
+description: "A system for automating legal discovery."
+
+toolbox: {
+  tools: [
+    {
+      name: "file_ingestion"
+      description: "A tool for ingesting files and directories."
+      module: "neuro_san.coded_tools.file_ingestion.file_ingestion"
+      class: "FileIngestionTool"
+    },
+    {
+      name: "metadata_extractor"
+      description: "A tool for extracting metadata from files."
+      module: "neuro_san.coded_tools.metadata_extractor.metadata_extractor"
+      class: "MetadataExtractorTool"
+    }
+  ]
+}
